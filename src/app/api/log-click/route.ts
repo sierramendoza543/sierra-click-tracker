@@ -16,7 +16,8 @@ export async function POST() {
     }
 
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch (err) {
+    console.error('Error logging click:', err);
     return NextResponse.json({ success: false, error: 'Failed to log click' }, { status: 500 });
   }
 } 
